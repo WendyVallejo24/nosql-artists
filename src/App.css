@@ -1,38 +1,64 @@
-.App {
+.navbar {
+  background: linear-gradient(240deg, pink, violet, purple);
+}
+
+.img-home{
+  margin-left: 10px;
+  border-radius: 50%;
+}
+
+.container h2 {
   text-align: center;
+  margin: 25px auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav-link {
+  margin-left: 50%;
+  font-family: 'Comic Sans MS';
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-item {
+  margin-left: 15px;
+  font-size: 19px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.list {
+  text-align: left;
+  max-width: 750px;
+  margin: auto;
 }
 
-.App-link {
-  color: #61dafb;
+.submit-form {
+  max-width: 300px;
+  margin: auto;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.edit-form {
+  max-width: 300px;
+  margin: auto;
+}
+
+#submit{
+  margin-top: 10px;
+}
+
+#published {
+  background-color: blueviolet;
+  margin-right: 5px;
+}
+
+#delete{
+  background-color: blueviolet;
+  margin-right: 5px;
+}
+
+#update {
+  background-color: blueviolet;
+  margin-right: 5px;
+}
+
+h3 {
+  font-family: 'Comic Sans MS';
+  font-weight: bold;
+  color: aqua;
 }
