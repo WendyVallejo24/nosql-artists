@@ -13,7 +13,7 @@ function AngryButton() {
                     setLiked(true);
                 }}
             >
-                <img src={angry} className='img' width={15} height={15} /> <br/>
+                <img src={angry} className='img' width={15} height={15} alt="" /> <br/>
                 {angries} 
             </button>
         </div>
