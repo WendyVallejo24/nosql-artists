@@ -77,7 +77,7 @@ export default class ArtistsList extends Component {
       <div className="list row" id="list-row">
         <div class="identificacion">
           <div class="imagen">
-          <img src={image} className='img-home' width={100} height={100} /> 
+          <img src={image} className='img-home' width={100} height={100} alt="" /> 
           </div>
           <br />
           <p class="name">Wendy Belén Vallejo Patraca - S20006733</p>
