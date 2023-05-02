@@ -114,7 +114,7 @@ export default class Artists extends Component {
     return (
       <div>
         <h4>Artist</h4>
-        <img src={this.state.url} alt="." />
+        <img src={this.state.url} alt="" />
         {currentArtist ? (
           <div className="edit-form">
             <form>
