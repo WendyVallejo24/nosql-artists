@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 import ArtistsDataService from "../services/artists.service";
 
 import Artists from "./artists.component";
