@@ -13,7 +13,7 @@ function LikeButton() {
                     setLiked(true);
                 }}
             >
-                <img src={like} className='img' width={15} height={15} /> <br/>
+                <img src={like} className='img' width={15} height={15} alt="" /> <br/>
                 {likes} 
             </button>
         </div>
