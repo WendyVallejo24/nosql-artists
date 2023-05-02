@@ -18,7 +18,7 @@ export default class AddArtists extends Component {
       description: "",
       published: false,
       submitted: false,
-      file : null,
+      file: null,
       url: ""
     };
   }
@@ -36,16 +36,17 @@ export default class AddArtists extends Component {
     console.log(file);
     alert(file.name);
 
-    const uploadTask = storage.ref(`/images/${file.name}`).put(file);
+    const uploadTask = storage.ref('/images/' + file.name).put(file);
 
-    uploadTask.on("state_changed", console.log, console.error, () =>  {
-       storage
-            .ref("images")
-            .child(file.name)
-            .getDownloadURL()
-            .then((myurl) =>  { 
-                this.state.url = myurl;
-            });
+    uploadTask.on("state_changed", console.log, console.error, () => {
+      storage
+        .ref("images")
+        .child(file.name)
+        .getDownloadURL()
+        .then((myurl) => {
+          alert(myurl);
+          this.setState({ url: myurl });
+        });
     });
 
   }
@@ -94,61 +95,60 @@ export default class AddArtists extends Component {
 
   render() {
     return (
-        <div className="submit-form">
-          {this.state.submitted ? (
-            <div>
-              <h4>You submitted successfully!</h4>
-              <button className="btn btn-success" onClick={this.newTutorial}>
-                Add
-              </button>
-            </div>
-          ) : (
-            <div>
-              <div className="form-group">
-                <label htmlFor="title">Title</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="title"
-                  required
-                  value={this.state.title}
-                  onChange={this.onChangeTitle}
-                  name="title"
-                />
-              </div>
-  
-              <div className="form-group">
-                <label htmlFor="description">Description</label>
-                <input
-                  type="text"
-                  className="form-control"
-                  id="description"
-                  required
-                  value={this.state.description}
-                  onChange={this.onChangeDescription}
-                  name="description"
-                />
-                </div>
-            <div>
-                <form onSubmit={ (event) => {
-                    this.handleUpload(event, this.state.file)
-                }} >
-                <input type="file" onChange={(event)=> { 
-                    this.onChangeFile(event) 
-                }} 
-                />
-
-             <button disabled={!this.state.file}>upload to firebase</button>
-          </form>
-          <img src={this.url} alt="" />
+      <div className="submit-form">
+        {this.state.submitted ? (
+          <div>
+            <h4>You submitted successfully!</h4>
+            <button className="btn btn-success" onClick={this.newTutorial}>
+              Add
+            </button>
+          </div>
+        ) : (
+          <div>
+            <div className="form-group">
+              <label htmlFor="title">Title</label>
+              <input
+                type="text"
+                className="form-control"
+                id="title"
+                required
+                value={this.state.title}
+                onChange={this.onChangeTitle}
+                name="title"
+              />
             </div>
 
-              <button onClick={this.saveArtist} className="btn btn-success" id="submit">
-                Submit
-              </button>
+            <div className="form-group">
+              <label htmlFor="description">Description</label>
+              <input
+                type="text"
+                className="form-control"
+                id="description"
+                required
+                value={this.state.description}
+                onChange={this.onChangeDescription}
+                name="description"
+              />
             </div>
-          )}
-        </div>
-      );
+            <div>
+              <form onSubmit={(event) => {
+                this.handleUpload(event, this.state.file)
+              }} >
+                <input type="file" onChange={(event) => {
+                  this.onChangeFile(event)
+                }}
+                />
+                <button disabled={!this.state.file} id="upload">upload to firebase</button>
+              </form>
+              <img src={this.state.url} alt="" />
+            </div>
+
+            <button onClick={this.saveArtist} className="btn btn-success" id="submit">
+              Submit
+            </button>
+          </div>
+        )}
+      </div>
+    );
   }
 }

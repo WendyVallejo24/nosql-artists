@@ -1,7 +1,17 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import ArtistsDataService from "../services/artists.service";
 
 import Artists from "./artists.component";
+import LikeButton from "./reactions/LikeButton.component";
+import LoveButton from "./reactions/LoveButton.component";
+import SadButton from "./reactions/SadButton.component";
+import WowButton from "./reactions/WowButton.component";
+import AngryButton from "./reactions/AngryButton.component";
+import HahaButton from "./reactions/HahaButton.component";
+import CareButton from "./reactions/CareButton.component";
+
+import Comment from "./comment.component";
+import image from './img/perfil.jpg';
 
 export default class ArtistsList extends Component {
   constructor(props) {
@@ -64,34 +74,43 @@ export default class ArtistsList extends Component {
     const { artists, currentArtist, currentIndex } = this.state;
 
     return (
-      <div className="list row">
-        <div className="col-md-6">
+      <div className="list row" id="list-row">
+        <div class="identificacion">
+          <div class="imagen">
+          <img src={image} className='img-home' width={100} height={100} /> 
+          </div>
+          <br />
+          <p class="name">Wendy Belén Vallejo Patraca - S20006733</p>
+        </div>
+        <div className="col-md-6" id="list">
           <h4>Artists List</h4>
 
           <ul className="list-group">
             {artists &&
               artists.map((artist, index) => (
                 <li
-                  className={ "list-group-item " + (index === currentIndex ? "active" : "") }
+                  className={"list-group-item " + (index === currentIndex ? "active" : "")}
                   onClick={() => this.setActiveArtist(artist, index)}
                   key={index}
                 >
-                  {artist.title}
-
-                  <div>{artist.description}</div>
-                  <img src={artists.url}></img>
+                  {artist.title}<br />
+                  <div id="reactions">
+                    <LikeButton /><LoveButton /><SadButton /><WowButton /><AngryButton /><HahaButton /><CareButton />
+                  </div>
+                  <Comment />
                 </li>
               ))}
           </ul>
         </div>
-        <div className="col-md-6">
+        <div className="col-md-6" id="refresh">
           {currentArtist ? (
             <Artists
               artist={currentArtist}
               refreshList={this.refreshList}
             />
           ) : (
-            <div>
+
+            <div className="datos">
               <br />
               <p>Please click on a Artists...</p>
             </div>
@@ -99,7 +118,5 @@ export default class ArtistsList extends Component {
         </div>
       </div>
     );
-
-    
   }
 }

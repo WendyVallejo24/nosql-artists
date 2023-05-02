@@ -114,6 +114,7 @@ export default class Artists extends Component {
     return (
       <div>
         <h4>Artist</h4>
+        <img src={this.state.url} alt="." />
         {currentArtist ? (
           <div className="edit-form">
             <form>
@@ -157,7 +158,7 @@ export default class Artists extends Component {
             ) : (
               <button
                 className="badge badge-primary mr-2"
-                id = "published"
+                id="published"
                 onClick={() => this.updatePublished(true)}
               >
                 Publish
@@ -166,7 +167,7 @@ export default class Artists extends Component {
 
             <button
               className="badge badge-danger mr-2"
-              id = "delete"
+              id="delete"
               onClick={this.deleteArtist}
             >
               Delete
@@ -175,7 +176,7 @@ export default class Artists extends Component {
             <button
               type="submit"
               className="badge badge-success"
-              id = "update"
+              id="update"
               onClick={this.updateArtist}
             >
               Update
