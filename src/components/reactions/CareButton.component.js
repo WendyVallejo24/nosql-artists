@@ -13,7 +13,7 @@ function CareButton() {
                     setLiked(true);
                 }}
             >
-                <img src={care} className='img' width={15} height={15} /> <br/>
+                <img src={care} className='img' width={15} height={15} alt="" /> <br/>
                 {cares} 
             </button>
         </div>
