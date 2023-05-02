@@ -19,5 +19,5 @@ class ArtistsDataService {
     return db.doc(id).delete();
   }
 }
-
-export default new ArtistsDataService();
+const inst=new ArtistsDataService();
+export default inst;
