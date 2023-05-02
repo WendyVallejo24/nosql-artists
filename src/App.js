@@ -14,7 +14,7 @@ class App extends Component {
       <div>
         <nav className="navbar navbar-expand navbar-dark bg-dark">
           <a href="/artists" className="navbar-brand">
-          <img src={image} className='img-home' width={45} height={45} />
+          <img src={image} className='img-home' width={45} height={45} alt="" />
           </a>
           <h3>React Firestore CRUD</h3>
           <div className="navbar-nav mr-auto">
