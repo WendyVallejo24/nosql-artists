@@ -19,25 +19,26 @@ const CommentComponent = () => {
   return (
     <View>
       <div class="newComment">
-      <FlatList
-        class = "comment-list"
-        data={comments}
-        renderItem={({ item }) => <Text>{item.content}</Text>}
-        keyExtractor={(item) => item.id.toString()}
-      />
-      <View>
-        <div class="comentarios">
-        <div class="comment">
-            <TextInput
+        <div class="comment-list">
+          <FlatList
+            data={comments}
+            renderItem={({ item }) => <Text>{item.content}</Text>}
+            keyExtractor={(item) => item.id.toString()}
+          />
+        </div>
+        <View>
+          <div class="comentarios">
+            <div class="comment">
+              <TextInput
                 id="new-comment"
                 placeholder="Nuevo comentario"
                 onChangeText={(text) => setNewComment(text)}
                 value={newComment}
-            />
-        </div>
-        <Button class="btnAgregar" title="Agregar" onPress={handleAddComment}>Agregar</Button>
-        </div>
-      </View>
+              />
+            </div>
+            <Button class="btnAgregar" title="Agregar" onPress={handleAddComment}>Agregar</Button>
+          </div>
+        </View>
       </div>
     </View>
   );
