@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import ArtistsDataService from "../services/artists.service";
 
-import Artists from "./artists.component";
 import LikeButton from "./reactions/LikeButton.component";
 import LoveButton from "./reactions/LoveButton.component";
 import SadButton from "./reactions/SadButton.component";
@@ -72,7 +71,7 @@ export default class ArtistsList extends Component {
   }
 
   render() {
-    const { artist, currentArtist, currentIndex } = this.state;
+    const { artist } = this.state;
 
     return (
       <div className="list row mx-auto cont-center text-center" id="list-row">
