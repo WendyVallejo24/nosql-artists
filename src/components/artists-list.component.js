@@ -21,7 +21,7 @@ export default class ArtistsList extends Component {
     this.onDataChange = this.onDataChange.bind(this);
 
     this.state = {
-      artists: [],
+      artist: [],
       currentArtist: null,
       currentIndex: -1,
     };
@@ -38,21 +38,22 @@ export default class ArtistsList extends Component {
   }
 
   onDataChange(items) {
-    let artists = [];
+    let artist = [];
 
     items.forEach((item) => {
       let id = item.id;
       let data = item.data();
-      artists.push({
+      artist.push({
         id: id,
         title: data.title,
         description: data.description,
         published: data.published,
+        url: data.url,
       });
     });
 
     this.setState({
-      artists: artists,
+      artist: artist,
     });
   }
 
@@ -63,18 +64,18 @@ export default class ArtistsList extends Component {
     });
   }
 
-  setActiveArtist(artist, index) {
+  setActiveArtist(artists, index) {
     this.setState({
-      currentArtist: artist,
+      currentArtist: artists,
       currentIndex: index,
     });
   }
 
   render() {
-    const { artists, currentArtist, currentIndex } = this.state;
+    const { artist, currentArtist, currentIndex } = this.state;
 
     return (
-      <div className="list row" id="list-row">
+      <div className="list row mx-auto cont-center text-center" id="list-row">
         <div class="identificacion">
           <div class="imagen">
           <img src={image} className='img-home' width={100} height={100} alt="" /> 
@@ -83,17 +84,21 @@ export default class ArtistsList extends Component {
           <p class="name">Wendy Belén Vallejo Patraca - S20006733</p>
         </div>
         <div className="col-md-6" id="list">
-          <h4>Artists List</h4>
 
           <ul className="list-group">
-            {artists &&
-              artists.map((artist, index) => (
+            {artist &&
+              artist.map((artists, index) => (
                 <li
-                  className={"list-group-item " + (index === currentIndex ? "active" : "")}
+                  className={"list-group-item "}
                   onClick={() => this.setActiveArtist(artist, index)}
                   key={index}
                 >
-                  {artist.title}<br />
+                  <h4 class="title">{artists.title}</h4>
+                  <br />
+                  <div class="post">
+                    <img src={artists.url} alt="." />
+                  </div>
+                  
                   <div id="reactions">
                     <LikeButton /><LoveButton /><SadButton /><WowButton /><AngryButton /><HahaButton /><CareButton />
                   </div>
@@ -101,20 +106,6 @@ export default class ArtistsList extends Component {
                 </li>
               ))}
           </ul>
-        </div>
-        <div className="col-md-6" id="refresh">
-          {currentArtist ? (
-            <Artists
-              artist={currentArtist}
-              refreshList={this.refreshList}
-            />
-          ) : (
-
-            <div className="datos">
-              <br />
-              <p>Please click on a Artists...</p>
-            </div>
-          )}
         </div>
       </div>
     );
