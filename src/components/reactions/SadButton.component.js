@@ -13,7 +13,7 @@ function SadButton() {
                     setLiked(true);
                 }}
             >
-                <img src={sad} className='img' width={15} height={15} /> <br/>
+                <img src={sad} className='img' width={15} height={15} alt="" /> <br/>
                 {sads} 
             </button>
         </div>

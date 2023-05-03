@@ -13,7 +13,7 @@ function WowButton() {
                     setLiked(true);
                 }}
             >
-                <img src={wow} className='img' width={15} height={15} /> <br/>
+                <img src={wow} className='img' width={15} height={15} alt="" /> <br/>
                 {wows} 
             </button>
         </div>
