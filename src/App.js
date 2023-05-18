@@ -12,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <div class="header">
+        <div className="header">
         <nav className="navbar navbar-expand">
           <a href="/artists" className="navbar-brand">
           <img src={image} className='img-home' width={45} height={45} alt="" />
