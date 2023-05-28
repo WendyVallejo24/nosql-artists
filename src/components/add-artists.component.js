@@ -27,7 +27,7 @@ export default class AddArtists extends Component {
     console.log(e.target.files[0]);
 
     this.setState({
-      file: e.target.files[0]
+      file: e.target.files[0],
     });
   }
 
@@ -45,7 +45,7 @@ export default class AddArtists extends Component {
         .getDownloadURL()
         .then((myurl) => {
           alert(myurl);
-          this.setState({ url: myurl });
+            this.setState({ url: myurl });
         });
     });
 
