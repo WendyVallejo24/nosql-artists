@@ -12,7 +12,8 @@ class App extends Component {
   render() {
     return (
       <div>
-        <nav className="navbar navbar-expand navbar-dark bg-dark">
+        <div className="header">
+        <nav className="navbar navbar-expand">
           <a href="/artists" className="navbar-brand">
           <img src={image} className='img-home' width={45} height={45} alt="" />
           </a>
@@ -30,7 +31,10 @@ class App extends Component {
             </li>
           </div>
         </nav>
-        
+        </div>
+        <br/>
+        <br/>
+        <br/>
         <div className="container mt-3" id="general">
           <Routes>
             <Route exact path="artists"    element={<ArtistsList />} />

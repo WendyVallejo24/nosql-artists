@@ -75,12 +75,12 @@ export default class ArtistsList extends Component {
 
     return (
       <div className="list row mx-auto cont-center text-center" id="list-row">
-        <div class="identificacion">
-          <div class="imagen">
+        <div className="identificacion">
+          <div className="imagen">
           <img src={image} className='img-home' width={100} height={100} alt="" /> 
           </div>
           <br />
-          <p class="name">Wendy Belén Vallejo Patraca - S20006733</p>
+          <p className="name">Wendy Belén Vallejo Patraca - S20006733</p>
         </div>
         <div className="col-md-6" id="list">
 
@@ -92,9 +92,9 @@ export default class ArtistsList extends Component {
                   onClick={() => this.setActiveArtist(artist, index)}
                   key={index}
                 >
-                  <h4 class="title">{artists.title}</h4>
+                  <h4 className="title">{artists.title}</h4>
                   <br />
-                  <div class="post">
+                  <div className="post">
                     <img src={artists.url} alt="." />
                   </div>
                   
