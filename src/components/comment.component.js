@@ -18,8 +18,8 @@ const CommentComponent = () => {
 
   return (
     <View>
-      <div class="newComment">
-        <div class="comment-list">
+      <div className="newComment">
+        <div className="comment-list">
           <FlatList
             data={comments}
             renderItem={({ item }) => <Text>{item.content}</Text>}
@@ -27,8 +27,8 @@ const CommentComponent = () => {
           />
         </div>
         <View>
-          <div class="comentarios">
-            <div class="comment">
+          <div className="comentarios">
+            <div className="comment">
               <TextInput
                 id="new-comment"
                 placeholder="Nuevo comentario"
@@ -36,7 +36,7 @@ const CommentComponent = () => {
                 value={newComment}
               />
             </div>
-            <Button class="btnAgregar" title="Agregar" onPress={handleAddComment}>Agregar</Button>
+            <Button className="btnAgregar" title="Agregar" onPress={handleAddComment}>Agregar</Button>
           </div>
         </View>
       </div>

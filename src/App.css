@@ -2,7 +2,14 @@
   background: linear-gradient(240deg, rgb(166, 171, 248), rgb(76, 104, 225), rgb(0, 6, 128));
 }
 
-.img-home{
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.img-home {
   margin-left: 10px;
   border-radius: 50%;
 }
@@ -45,7 +52,7 @@
   margin: auto;
 }
 
-#submit{
+#submit {
   margin-top: 10px;
 }
 
@@ -54,7 +61,7 @@
   margin-right: 5px;
 }
 
-#delete{
+#delete {
   background-color: blueviolet;
   margin-right: 5px;
 }
@@ -73,7 +80,7 @@ h3 {
   padding-top: 10px;
 }
 
-#like{
+#like {
   text-align: center;
   align-items: center;
 }
@@ -117,7 +124,7 @@ h3 {
   }
 }
 
-#reactions > * {
+#reactions>* {
   display: inline-block;
 }
 
@@ -125,7 +132,7 @@ h3 {
   margin-top: 15px;
 }
 
-.comentarios > * {
+.comentarios>* {
   display: inline-block;
 }
 
@@ -148,8 +155,10 @@ h3 {
   font-size: 12;
   display: flex;
   width: 100%;
+  top: 20px;
 }
-.identificacion > div {
+
+.identificacion>div {
   width: 50%;
 }
 
@@ -184,7 +193,7 @@ h3 {
 }
 
 .list-group {
-  font-display: block;
+  font-display: flex;
 }
 
 .cont-center {
