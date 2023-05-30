@@ -3,6 +3,7 @@ import ArtistsDataService from "../services/artists.service";
 
 import "firebase/compat/storage";
 import firebase from "firebase/compat/app";
+
 export const storage = firebase.storage();
 
 export default class AddArtists extends Component {
@@ -12,6 +13,8 @@ export default class AddArtists extends Component {
     this.onChangeDescription = this.onChangeDescription.bind(this);
     this.saveArtist = this.saveArtist.bind(this);
     this.newArtist = this.newArtist.bind(this);
+    this.onChangeFile = this.onChangeFile.bind(this);
+    this.handleUpload = this.handleUpload.bind(this);
 
     this.state = {
       title: "",
@@ -88,7 +91,8 @@ export default class AddArtists extends Component {
       title: "",
       description: "",
       published: false,
-
+      url: "",
+      file: null,
       submitted: false,
     });
   }
