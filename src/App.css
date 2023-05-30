@@ -26,14 +26,16 @@
 }
 
 .nav-item {
-  margin-left: 15px;
   font-size: 19px;
+  width: 100%;
+  margin-right: 20px;
 }
 
 .list {
   text-align: left;
   font-display: block;
   width: 100%;
+  margin-bottom: 20px
 }
 
 .list-group-item {
@@ -78,6 +80,20 @@ h3 {
   font-weight: bold;
   font-size: 20px;
   padding-top: 10px;
+}
+
+.username {
+  color: black;
+  font-family: Verdana;
+  font-size: 20px;
+  text-align: center;
+}
+
+.gmail {
+  color: black;
+  font-family: Verdana;
+  font-size: 20px;
+  text-align: center;
 }
 
 #like {
@@ -200,4 +216,10 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.logout {
+  align-items: right;
+  text-align: right;
+  font-size: 19px;
 }
