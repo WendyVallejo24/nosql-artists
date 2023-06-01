@@ -11,6 +11,7 @@ import CareButton from "./reactions/CareButton.component";
 
 import Comment from "./comment.component";
 import image from './img/perfil.jpg';
+import { AuthProvider } from "../context/AuthContext";
 
 export default class ArtistsList extends Component {
   constructor(props) {
@@ -77,7 +78,7 @@ export default class ArtistsList extends Component {
       <div className="list row mx-auto cont-center text-center" id="list-row">
         <div className="identificacion">
           <div className="imagen">
-          <img src={image} className='img-home' width={100} height={100} alt="" /> 
+            <img src={image} className='img-home' width={100} height={100} alt="" />
           </div>
           <br />
           <p className="name">Wendy Belén Vallejo Patraca - S20006733</p>
@@ -97,11 +98,19 @@ export default class ArtistsList extends Component {
                   <div className="post">
                     <img src={artists.url} alt="." />
                   </div>
-                  
+
                   <div id="reactions">
-                    <LikeButton /><LoveButton /><SadButton /><WowButton /><AngryButton /><HahaButton /><CareButton />
+                    <AuthProvider>
+                      <LikeButton pubId={artists.id} />
+                      <LoveButton pubId={artists.id} />
+                      <SadButton pubId={artists.id} />
+                      <WowButton pubId={artists.id} />
+                      <AngryButton pubId={artists.id} />
+                      <HahaButton pubId={artists.id} />
+                      <CareButton pubId={artists.id} />
+                    </AuthProvider>
                   </div>
-                  <Comment />
+                  <Comment pubId={artists.id} />
                 </li>
               ))}
           </ul>
