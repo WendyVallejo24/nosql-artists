@@ -156,6 +156,10 @@ h3 {
   align-items: center;
 }
 
+.comentario {
+  width: 30px;
+}
+
 #upload {
   margin-top: 8px;
   border-radius: 8px;
