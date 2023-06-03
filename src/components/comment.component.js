@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, TextInput, Button, FlatList, Text } from 'react-native';
-import { Form, ListGroup } from 'react-bootstrap';
+import { Form, Button, ListGroup } from 'react-bootstrap';
 import '../App.css';
 import kafkaService from '../services/kafka.service';
 import { useAuth } from '../context/AuthContext';
@@ -46,29 +45,29 @@ const CommentComponent = ({ pubId }) => {
   };
 
   return (
-    <View>
-      <div className="newComment">
-        <div className="comment-list">
-          <FlatList
-            data={comments}
-            renderItem={({ item }) => <Text>{item.content}</Text>}
-            keyExtractor={(item) => item.id.toString()}
-          />
-          <Form className="comment-form">
-            <Form.Control
-              type="text"
-              placeholder="Nuevo comentario"
-              value={newComment}
-              onChange={(e) => setNewComment(e.target.value)}
-            />
+    <div className="comment-component">
+      <ListGroup>
+        {comments.map((comment) => (
+          <ListGroup.Item key={comment._id} className='comentarios' data={comments}>
+            {comment.comment}
+          </ListGroup.Item>
+        ))}
+      </ListGroup>
+      <Form className="comment-form">
 
-            <Button className="btnAgregar" title="Agregar" onPress={handleAddComment}>Agregar</Button>
-          </Form>
+        <Form.Control
+          id="newcomment"
+          type="text"
+          placeholder="Nuevo comentario"
+          value={newComment}
+          onChange={(e) => setNewComment(e.target.value)}
+        />
 
-        </div>
-
-      </div>
-    </View>
+        <Button variant="primary" type="button" onClick={handleAddComment}>
+          Agregar
+        </Button>
+      </Form>
+    </div>
   );
 };
 

@@ -144,20 +144,18 @@ h3 {
   display: inline-block;
 }
 
-.newComment {
-  margin-top: 15px;
-}
-
 .comentarios>* {
   display: inline-block;
 }
 
-.comentarios {
-  align-items: center;
+#newcomment{
+  margin-bottom: 5px;
 }
 
-.comentario {
-  width: 30px;
+.comentarios {
+  align-items: left;
+  text-align: left;
+  margin-bottom: 5px;
 }
 
 #upload {

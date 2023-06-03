@@ -10,25 +10,21 @@ function AngryButton({ pubId }) {
     const [angried, setLiked] = useState(false);
 
     useEffect(() => {
-        // Crea una instancia de MongoDBService con la URL base del backend
         const mongoDBService = new MongoDBService('http://localhost:3001');
 
-        // Define los parámetros deseados para la llamada a getReactionsByObjectAndReaction
         const objectId = pubId;
         const reactionId = 'angry';
 
-        // Define una función asincrónica para cargar los datos
         const fetchData = async () => {
             try {
                 const response = await mongoDBService.getReactionsByObjectAndReaction(objectId, reactionId);
                 const data = response[0];
-                //setLikes(data.n);
+                setLikes(data.n);
             } catch (error) {
                 console.error(error);
             }
         };
 
-        // Llama a fetchData al montar o actualizar el componente
         fetchData();
     })
 
