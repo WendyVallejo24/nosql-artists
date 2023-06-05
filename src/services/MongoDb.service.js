@@ -35,5 +35,5 @@ class MongoDBService {
     }
   }
 }
-
-module.exports = MongoDBService;
+const inst = new MongoDBService();
+export default = inst;
