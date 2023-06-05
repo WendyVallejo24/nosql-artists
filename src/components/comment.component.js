@@ -38,7 +38,7 @@ const CommentComponent = ({ pubId }) => {
       return; // Evitar agregar comentarios vacíos
     }
 
-    const comment = { id: Date.now(), content: newComment };
+    const comment = { _id: Date.now(), comment: newComment };
     saveComment(comment);
     setComments((prevComments) => [...prevComments, comment]);
     setNewComment('');

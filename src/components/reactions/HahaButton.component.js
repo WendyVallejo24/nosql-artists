@@ -22,7 +22,13 @@ function HahaButton({ pubId }) {
             try {
                 const response = await mongoDBService.getReactionsByObjectAndReaction(objectId, reactionId);
                 const data = response[0];
-                setLikes(data.n);
+                if (data) {
+                    setLikes(data.n);
+                    console.log(data.n);
+                } else {
+                    setLikes(0);
+                }
+                //setLikes(data.n);
             } catch (error) {
                 console.error(error);
             }
