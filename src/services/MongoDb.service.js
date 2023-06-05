@@ -36,4 +36,4 @@ class MongoDBService {
   }
 }
 const inst = new MongoDBService();
-export default = inst;
+export default inst;
