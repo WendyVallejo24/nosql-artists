@@ -20,7 +20,12 @@ function CareButton({ pubId }) {
             try {
                 const response = await mongoDBService.getReactionsByObjectAndReaction(objectId, reactionId);
                 const data = response[0];
-                console.log(data);
+                if (data) {
+                    setLikes(data.n);
+                    console.log(data.n);
+                } else {
+                    setLikes(0);
+                }
                 //setLikes(data.n);
             } catch (error) {
                 console.error(error);
@@ -30,7 +35,7 @@ function CareButton({ pubId }) {
         fetchData();
     })
 
-    function saveLike(e, status) {
+    function saveLike(e) {
         const uId = user.uid;
         const oId = pubId;
         const rId = "care"
